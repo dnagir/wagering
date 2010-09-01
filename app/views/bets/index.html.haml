@@ -1,0 +1,12 @@
+%ul.bets
+  - 30.times do |n|
+    .site
+      %a{:href=>bet_path(1)}
+        = "site#{n}example.com"
+    .description
+      The election campaign sucks as Tonny with Gillard do
+    .phrase
+      Election sucks
+    .time-remaining
+      1 day, 3 hours
+    

@@ -40,15 +40,24 @@ module Wagering
     config.filter_parameters += [:password]
 
     config.generators do |g|
-        g.template_engine :haml
+        # using haml-rails gem instead of g.template_engine :haml
         g.stylesheets false
         g.fixture false
-        g.fixture_replacement :factory_girl
+        # g.fixture_replacement :factory_girl
         g.view_specs false
         g.helper_specs false
         g.routing_specs false
         g.helper false
         # g.form_builder :formtastic
     end
-  end
-end
+
+    ### Part of a Spork hack. See http://bit.ly/arY19y
+    if Rails.env.test?
+      initializer :after => :initialize_dependency_mechanism do
+        # Work around initializer in railties/lib/rails/application/bootstrap.rb
+        ActiveSupport::Dependencies.mechanism = :load
+      end
+    end
+    
+  end # class
+end # module

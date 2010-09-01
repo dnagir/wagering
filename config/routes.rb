@@ -1,4 +1,12 @@
 Wagering::Application.routes.draw do
+
+  root :to => "pages#index"
+  %w{rules terms}.each do |page|
+    match "/#{page}", :to => "pages##{page}"
+  end
+
+  resources :bets
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
