@@ -1,2 +1,18 @@
 .new-bet
-  Here we are supposed to create a new bet
+  %form(action='#')
+    %fieldset
+      %legend Start a new bet
+
+      %label(for='description') I want to bet because
+      %input(id='description' type='text' maxlength='200' value='I saw UFO')
+
+      %label(for='phrase') And think the phrase
+      %input(id='phrase' maxlength='50' value='UFO has settled')
+
+      %label(for='url') Will be on (web site)
+      %input(id='url' type='url' value='http://news.com')
+
+      %label(for='points')
+      %input(id='points' type='numeric' value='50')
+
+      %input(type='submit' value='Rock & Roll!')

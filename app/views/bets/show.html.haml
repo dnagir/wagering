@@ -1,2 +1,24 @@
-.bet-show
-  Here we are supposed to see all the details about the bet
+.bet
+  .description The election campaign sucks as Tonny with Gillard do
+  .price 250 points
+  .phrase Election sucks
+  .time-remaining 1 day, 3 hours approx
+
+.prediction
+  .supporter Winner of supporter will get 300 points
+  .taker Winner of takers will get 450 points
+
+.participants
+  - 7.times do |n|
+    .participant{:class => (n%3) == 0 ? 'mine' : nil}
+      .name= "user#{n}"
+      .price= "#{n%2==0?'+':'-'} #{n*rand(50)}"
+
+.participate
+  %form(action='#')
+    %fieldset
+      %legend Participate
+      %label(for='points') Points
+      %input(id='points' type='number' value='260')
+      %input(type='submit' value='Take the bet!')
+      %input(type='submit' value='Support the bet!')
