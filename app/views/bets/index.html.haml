@@ -1,13 +1,15 @@
-= link_to 'Start a new one', new_bet_path
-%ul.bets
+- phrases = ['Election sucks', 'Britney Spears', 'Pease in the middle east', 'Chicago Bulls', 'Honda Cvic', 'Google is down', 'Hurricane', 'Recession']
+.bets
   - 30.times do |n|
-    .site
-      %a{:href=>bet_path(1)}
-        = "site#{n}example.com"
-    .description
-      The election campaign sucks as Tonny with Gillard do
-    .phrase
-      Election sucks
-    .time-remaining
-      1 day, 3 hours
-    
+    .bet{:class => [n%3==0 && :negative]}
+      .phrase= phrases[rand(phrases.length)]
+      .site
+        %a{:href=>bet_path(1)}
+          = "site#{n}example.com"
+      .description
+        Neque porro quisquam est qui dolorem ipsum quia dolor sit amet
+      .time-remaining
+        1 day, 3 hours
+
+- content_for :context do
+  = link_to 'Start a new one', new_bet_path

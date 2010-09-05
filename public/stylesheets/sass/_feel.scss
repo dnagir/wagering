@@ -1,0 +1,60 @@
+
+/* 
+  Look & Feel
+*/
+
+body {
+  background-color: white;
+  font-size: 14px;
+}
+
+#container {
+  header {
+    background-color: #a3181f;
+    color: white;
+    nav {
+      background-color: #e36b0a;
+      a {
+        color: inherit;
+      }
+    }
+  }
+  #content {
+    border: 1px solid #e36b0a;
+    @include rounded(bottom,left);
+    @include rounded(bottom,right);
+    h1 {
+      font-size: 1.5em;
+    }
+  }
+
+
+  .bets {
+    text-align: center;
+
+    .bet {
+      margin: 5px 0 0 0;
+      padding: 2px 2px 2px 25px;
+      border: 1px solid #e36b0a;
+      @include rounded_all;
+      background-image: url('../images/bet-positive.png');
+      background-repeat: no-repeat;
+      background-position: left center;
+      display: inline-block;
+      width: 25%;
+
+      @include transition(background-color);
+      &.negative { background-image: url('../images/bet-negative.png'); }
+      &:hover { background-color: #e36b0a; }
+
+      .phrase {
+        font-weight: bold;
+        font-size: 1.1em;
+      }
+      .time-remaining {
+        font-style: italic;
+        font-size: 0.8em;
+      }
+    }
+  }
+}

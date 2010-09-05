@@ -1,0 +1,22 @@
+@mixin rounded($vside, $hside, $radius: 10px){
+  border-#{$vside}-#{$hside}-radius: $radius;
+  -moz-border-radius-#{$vside}#{$hside}: $radius;
+}
+
+@mixin rounded_all($radius: 10px){
+  @include rounded(top,left, $radius);
+  @include rounded(top,right, $radius);
+  @include rounded(bottom,left, $radius);
+  @include rounded(bottom,right, $radius);
+}
+
+@mixin transition($prop, $duration=1s) {
+  -moz-transition-property: $prop;
+  -moz-transition-duration: $duration;
+
+  -webkit-transition-property: $prop;
+  -webkit-transition-duration: $duration;
+
+  -o-transition-property: $prop;
+  -o-transition-duration: $duration;
+}

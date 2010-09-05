@@ -1,0 +1,56 @@
+/*
+  LAYOUT
+*/
+
+.clear {
+  clear: both;
+}
+
+#container {
+  width: 960px;
+  margin: auto;
+  
+  header {
+    height: 80px;
+    
+    h1 {
+      float: left;
+      width: 32%;
+      .slogan {
+        display: inline;
+        position: relative;
+        top: -1.5em;
+      }
+    }
+    nav {
+      float: right;
+      margin-right: 32%;
+      padding: 0.75em 1em 0.75em 1em;
+    }
+  }
+
+  #content {
+    padding: 10px;
+
+    h1.caption {
+      display: block;
+    }
+
+    #main {
+      float: left;
+      width: 77%;
+    }
+    #context {
+      padding: 0 10px 0 10px;
+      width: 20%;
+      float: right;
+    }
+  }
+  
+  footer {
+    clear: both;
+    margin: 5px;
+    font-size: 0.8em;
+    text-align: center;
+  }
+}

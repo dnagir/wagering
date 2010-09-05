@@ -6,6 +6,7 @@ tmp/**/*
 tmp/*
 doc/api
 doc/app
+public/stylesheets/*.css
 *.swp
 *~
 .DS_Store
